@@ -13,7 +13,7 @@ public class GameTest {
     public void testCorrectAnswer() throws Exception {
         Game game = new Game();
         Question q = new Question("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London");
-        game.addQuestion("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London", "London");
+        game.addQuestion(q, "London");
         assertTrue(game.checkAnswer(q, 1));
     }
 
@@ -21,7 +21,7 @@ public class GameTest {
     public void testNotCorrectAnswer() throws Exception {
         Game game = new Game();
         Question q = new Question("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London");
-        game.addQuestion("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London", "London");
+        game.addQuestion(q, "London");
         assertFalse(game.checkAnswer(q, 2));
     }
 
@@ -29,7 +29,7 @@ public class GameTest {
     public void testAddQuestion() throws Exception {
         Game game = new Game();
         Question q = new Question("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London");
-        game.addQuestion("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London", "London");
+        game.addQuestion(q, "London");
         List<Question> questions = game.getAllQuestions();
         assertEquals(q, questions.get(0));
     }
@@ -40,8 +40,8 @@ public class GameTest {
         Question q = new Question("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London");
         Question q2 = new Question("What is the Capital of Great Britain - 2?", "Paris", "Karaganda", "Dublin", "London");
 
-        game.addQuestion("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London", "London");
-        game.addQuestion("What is the Capital of Great Britain - 2?", "Paris", "Karaganda", "Dublin", "London", "London");
+        game.addQuestion(q, "London");
+        game.addQuestion(q2, "London");
 
         List<Question> questions = game.getAllQuestions();
 

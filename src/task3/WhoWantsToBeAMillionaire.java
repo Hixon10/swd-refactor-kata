@@ -8,9 +8,9 @@ import java.util.Scanner;
 public class WhoWantsToBeAMillionaire {
   public static void main(String[] args) {
     Game game = new Game();
-    game.addQuestion("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London", "London");
-    game.addQuestion("Who is the author of Godfather novel?", "Hemingway", "Puzo", "Vonnegut", "Tolstoy", "Puzo");
-    game.addQuestion("What is the distance to the Moon?", "156 000 km", "384 000 km", "432 000 km", "521 000 km", "384 000 km");
+    game.addQuestion(new Question("What is the Capital of Great Britain?", "Paris", "Karaganda", "Dublin", "London"), "London");
+    game.addQuestion(new Question("Who is the author of Godfather novel?", "Hemingway", "Puzo", "Vonnegut", "Tolstoy"), "Puzo");
+    game.addQuestion(new Question("What is the distance to the Moon?", "156 000 km", "384 000 km", "432 000 km", "521 000 km"), "384 000 km");
 
     Scanner scanner = new Scanner(System.in);
     for (Question q : game) {

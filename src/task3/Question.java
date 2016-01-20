@@ -34,6 +34,21 @@ public class Question {
     this.answ3 = answ3;
     this.answ2 = answ2;
     this.answ1 = answ1;
+  }
 
+  public String getAnswerByIndex(Integer index) {
+    String answer = "";
+
+    if (index == 1) {
+      answer = answ1;
+    } else if (index == 2) {
+      answer = answ2;
+    } else if (index == 3) {
+      answer = answ3;
+    } else if (index == 4) {
+      answer = answ4;
+    }
+
+    return answer;
   }
 }
